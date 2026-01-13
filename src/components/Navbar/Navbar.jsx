@@ -1,0 +1,24 @@
+import React from 'react';
+import styles from './Navbar.module.css';
+
+const Navbar = () => {
+  return (
+    <nav className={styles.navbar}>
+      <div className={styles.logo}>
+        <div className={styles.logoIcon}>+</div>
+        <h2>MediCare Plus</h2>
+      </div>
+      <div className={styles.links}>
+        <a href='#find-doctor'>Find a Doctor</a>
+        <a href='#services'>Services</a>
+        <a href='#locations'>Locations</a>
+        <a href='#patients'>Patients</a>
+      </div>
+      <div className={styles.btn}>
+        <button>Patient Portal →</button>
+      </div>
+    </nav>
+  );
+};
+
+export default Navbar;

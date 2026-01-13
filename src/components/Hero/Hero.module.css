@@ -1,0 +1,163 @@
+.hero {
+    background-color: #1A202C;
+    padding: 80px 80px;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+
+.heroContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.leftContent {
+    flex: 1;
+    max-width: 600px;
+}
+
+.featureTag {
+    display: inline-block;
+    background-color: #2B6CB0;
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+.title {
+    font-size: 56px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.2;
+    margin: 0 0 24px 0;
+}
+
+.titleAccent {
+    color: #2B6CB0;
+}
+
+.description {
+    font-size: 18px;
+    color: #E2E8F0;
+    line-height: 1.6;
+    margin: 0 0 32px 0;
+}
+
+.ctaButtons {
+    display: flex;
+    gap: 16px;
+}
+
+.primaryButton {
+    padding: 14px 32px;
+    background-color: #2B6CB0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.primaryButton:hover {
+    background-color: #2C5282;
+}
+
+.secondaryButton {
+    padding: 14px 32px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.secondaryButton:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.rightContent {
+    flex: 1;
+    max-width: 600px;
+}
+
+.imageContainer {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.imagePlaceholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2B6CB0 0%, #1E3A5F 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
+
+.overlayCard {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background-color: rgba(26, 32, 44, 0.9);
+    padding: 16px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    backdrop-filter: blur(10px);
+}
+
+.videoIcon {
+    font-size: 24px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #2B6CB0;
+    border-radius: 8px;
+}
+
+.cardContent {
+    flex: 1;
+}
+
+.doctorName {
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.availability {
+    color: #A0AEC0;
+    font-size: 14px;
+}
+
+.statusDot {
+    width: 12px;
+    height: 12px;
+    background-color: #48BB78;
+    border-radius: 50%;
+}

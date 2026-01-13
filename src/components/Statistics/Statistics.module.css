@@ -1,0 +1,23 @@
+.statistics {
+    background-color: #1A202C;
+    padding: 60px 80px;
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+}
+
+.statCard {
+    text-align: center;
+}
+
+.statNumber {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.statLabel {
+    font-size: 18px;
+    color: #E2E8F0;
+}
