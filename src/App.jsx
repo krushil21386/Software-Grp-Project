@@ -1,22 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Navbar from './components/Navbar/Navbar';
-import Hero from './components/Hero/Hero';
-import Statistics from './components/Statistics/Statistics';
-import ComprehensiveCare from './components/ComprehensiveCare/ComprehensiveCare';
-import TopSpecialists from './components/TopSpecialists/TopSpecialists';
-import BookAppointment from './components/BookAppointment/BookAppointment';
-import Footer from './components/Footer/Footer';
+import Home from './pages/Home';
+import Login from './pages/Login';
 
 function App() {
+  const getIsLoginFromHash = () =>
+    typeof window !== 'undefined' && window.location.hash === '#login';
+
+  const [isLoginPage, setIsLoginPage] = useState(getIsLoginFromHash);
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      setIsLoginPage(getIsLoginFromHash());
+    };
+
+    window.addEventListener('hashchange', handleHashChange);
+    return () => window.removeEventListener('hashchange', handleHashChange);
+  }, []);
+
   return (
     <div className="app">
       <Navbar />
-      <Hero />
-      <Statistics />
-      <ComprehensiveCare />
-      <TopSpecialists />
-      <BookAppointment />
-      <Footer />
+      {isLoginPage ? <Login /> : <Home />}
     </div>
   );
 }

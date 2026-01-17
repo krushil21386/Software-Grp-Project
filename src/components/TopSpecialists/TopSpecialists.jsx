@@ -24,7 +24,7 @@ const TopSpecialists = () => {
   ];
 
   return (
-    <section className={styles.section}>
+    <section id="find-doctor" className={styles.section}>
       <div className={styles.header}>
         <h2 className={styles.title}>Meet Our Top Specialists</h2>
         <p className={styles.description}>
