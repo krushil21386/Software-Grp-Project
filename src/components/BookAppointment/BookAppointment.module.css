@@ -64,3 +64,74 @@
         transform: translateY(0);
     }
 }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .section {
+        padding: 60px 40px;
+    }
+    
+    .container {
+        padding: 50px;
+    }
+    
+    .title {
+        font-size: 32px;
+    }
+    
+    .description {
+        font-size: 16px;
+    }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+    .section {
+        padding: 50px 24px;
+    }
+    
+    .container {
+        padding: 40px 32px;
+    }
+    
+    .title {
+        font-size: 28px;
+    }
+    
+    .description {
+        font-size: 15px;
+        margin-bottom: 24px;
+    }
+    
+    .bookButton {
+        font-size: 16px;
+        padding: 14px 32px;
+    }
+}
+
+/* Mobile devices (Android phones) */
+@media (max-width: 480px) {
+    .section {
+        padding: 40px 16px;
+    }
+    
+    .container {
+        padding: 32px 20px;
+    }
+    
+    .title {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .description {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+    
+    .bookButton {
+        font-size: 15px;
+        padding: 12px 24px;
+        width: 100%;
+    }
+}

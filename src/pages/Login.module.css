@@ -349,22 +349,183 @@
   text-align: center;
 }
 
-@media (max-width: 960px) {
+/* Tablet */
+@media (max-width: 1024px) {
+  .loginPage {
+    padding: 40px 40px 32px 40px;
+  }
+  
+  .content {
+    gap: 48px;
+  }
+  
+  .heading {
+    font-size: 40px;
+  }
+  
+  .formCard {
+    max-width: 400px;
+  }
+}
+
+/* Small tablets */
+@media (max-width: 768px) {
+  .loginPage {
+    padding: 32px 24px 24px 24px;
+  }
+  
   .content {
     grid-template-columns: 1fr;
-    gap: 32px;
+    gap: 40px;
   }
-
-  .row {
-    grid-template-columns: 1fr;
+  
+  .leftPanel {
+    max-width: 100%;
+    text-align: center;
   }
-
+  
+  .heading {
+    font-size: 36px;
+  }
+  
+  .subheading {
+    font-size: 15px;
+  }
+  
+  .featureItem {
+    justify-content: center;
+  }
+  
   .rightPanel {
     justify-content: center;
   }
+  
+  .formCard {
+    max-width: 100%;
+  }
+  
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
 
+/* Mobile devices (Android phones) */
+@media (max-width: 480px) {
   .loginPage {
-    padding: 24px 20px 24px 20px;
+    padding: 24px 16px 20px 16px;
+    min-height: calc(100vh - 60px);
+  }
+  
+  .topBar {
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .content {
+    gap: 32px;
+  }
+  
+  .chip {
+    font-size: 10px;
+    padding: 5px 14px;
+    margin-bottom: 16px;
+  }
+  
+  .heading {
+    font-size: 28px;
+    margin-bottom: 16px;
+  }
+  
+  .subheading {
+    font-size: 14px;
+    margin-bottom: 24px;
+  }
+  
+  .featureList {
+    gap: 12px;
+  }
+  
+  .featureItem {
+    gap: 12px;
+  }
+  
+  .featureIconShield,
+  .featureIconBolt {
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+  
+  .featureTitle {
+    font-size: 14px;
+  }
+  
+  .featureDescription {
+    font-size: 13px;
+  }
+  
+  .formCard {
+    padding: 24px 20px 28px 20px;
+  }
+  
+  .cardHeader {
+    margin-top: 12px;
+    margin-bottom: 20px;
+  }
+  
+  .cardSubtitle {
+    font-size: 11px;
+    margin-bottom: 12px;
+  }
+  
+  .toggleButton {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+  
+  .form {
+    gap: 14px;
+  }
+  
+  .label {
+    font-size: 10px;
+  }
+  
+  .input {
+    padding: 9px 10px;
+    font-size: 14px;
+  }
+  
+  .primaryButton {
+    font-size: 14px;
+    padding: 11px 16px;
+    margin-top: 6px;
+  }
+  
+  .dividerText {
+    font-size: 10px;
+  }
+  
+  .socialButton {
+    font-size: 13px;
+    padding: 9px 10px;
+  }
+  
+  .termsText {
+    font-size: 10px;
+  }
+  
+  .backHomeLink {
+    font-size: 12px;
+  }
+  
+  .footerNote {
+    font-size: 10px;
+    margin-top: 24px;
+  }
+  
+  .row {
+    grid-template-columns: 1fr;
   }
 }
 
