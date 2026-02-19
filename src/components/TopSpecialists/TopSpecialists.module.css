@@ -1,6 +1,7 @@
 .section {
-    background-color: #1A202C;
+    background-color: var(--color-white);
     padding: 80px 80px;
+    transition: all 0.3s ease;
 }
 
 .header {
@@ -11,14 +12,14 @@
 .title {
     font-size: 42px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-charcoal);
     margin: 0 0 16px 0;
     line-height: 1.2;
 }
 
 .description {
     font-size: 18px;
-    color: #E2E8F0;
+    color: var(--color-text-muted);
     line-height: 1.6;
     margin: 0;
     max-width: 700px;
@@ -33,16 +34,18 @@
 }
 
 .specialistCard {
-    background-color: #2D3748;
+    background-color: var(--color-white);
     padding: 32px;
     border-radius: 12px;
     text-align: center;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    border: 1px solid var(--color-border);
+    transition: all 0.3s ease;
 }
 
 .specialistCard:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(44, 44, 44, 0.15);
 }
 
 .profileImage {
@@ -53,51 +56,56 @@
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    background: linear-gradient(135deg, #2B6CB0 0%, #1E3A5F 100%);
+    background-color: var(--color-crimson);
     margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
+    color: var(--color-white);
     font-size: 36px;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .name {
     font-size: 22px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--color-charcoal);
     margin: 0 0 8px 0;
 }
 
 .specialty {
     font-size: 16px;
     font-weight: 600;
+    color: var(--color-crimson);
     margin-bottom: 16px;
 }
 
 .cardDescription {
     font-size: 16px;
-    color: #A0AEC0;
+    color: var(--color-text-muted);
     line-height: 1.6;
     margin: 0 0 24px 0;
 }
 
 .viewProfileButton {
     padding: 10px 24px;
-    background-color: transparent;
-    color: #ffffff;
-    border: 2px solid #ffffff;
+    background-color: var(--color-crimson);
+    color: var(--color-white);
+    border: 2px solid var(--color-crimson);
     border-radius: 8px;
     font-size: 16px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: all 0.3s ease;
     width: 100%;
 }
 
 .viewProfileButton:hover {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: var(--color-crimson-dark);
+    border-color: var(--color-crimson-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(177, 18, 38, 0.3);
 }
 
 /* Tablet */

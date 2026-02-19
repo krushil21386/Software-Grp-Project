@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useSearchParams, useNavigate, Link } from 'react-router-dom';
 import styles from './BookAppointmentPage.module.css';
 import { doctors, hospitals, departments, appointments as initialAppointments } from '../utils/mockData';
 
@@ -136,14 +136,41 @@ const BookAppointmentPage = () => {
     setSelectedHospital(hospital);
   };
 
+  // Get next available slots for selected doctor
+  const getNextAvailableSlots = () => {
+    if (!selectedDoctor || !date) return [];
+    const bookedTimes = initialAppointments
+      .filter(apt => apt.doctorId === selectedDoctor.id && apt.date === date && apt.status === 'upcoming')
+      .map(apt => apt.time);
+    return timeSlots.filter(slot => !bookedTimes.includes(slot)).slice(0, 5);
+  };
+
+  const nextAvailableSlots = getNextAvailableSlots();
+
   return (
     <div className={styles.container}>
+      {/* Breadcrumb Navigation */}
+      <nav className={styles.breadcrumb}>
+        <Link to="/" className={styles.breadcrumbLink}>Home</Link>
+        <span className={styles.breadcrumbSeparator}>/</span>
+        <Link to="/book-appointment" className={styles.breadcrumbLink}>Book Appointment</Link>
+        {selectedDoctor && (
+          <>
+            <span className={styles.breadcrumbSeparator}>/</span>
+            <span className={styles.breadcrumbCurrent}>{selectedDoctor.name}</span>
+          </>
+        )}
+      </nav>
+
       <div className={styles.header}>
         <h1 className={styles.title}>Book Appointment</h1>
         <p className={styles.subtitle}>Schedule your visit with our healthcare professionals</p>
       </div>
 
-      <form className={styles.form} onSubmit={handleSubmit}>
+      <div className={styles.contentLayout}>
+        {/* Left Column - Booking Form (65%) */}
+        <div className={styles.leftColumn}>
+          <form className={styles.form} onSubmit={handleSubmit}>
         {!doctorId && (
           <>
             <div className={styles.formGroup}>
@@ -206,29 +233,6 @@ const BookAppointmentPage = () => {
           </>
         )}
 
-        {selectedDoctor && (
-          <div className={styles.selectedDoctor}>
-            <h3>Selected Doctor</h3>
-            <div className={styles.doctorDisplay}>
-              <img src={selectedDoctor.image} alt={selectedDoctor.name} className={styles.doctorImage} />
-              <div>
-                <h4>{selectedDoctor.name}</h4>
-                <p>{selectedDoctor.specialty}</p>
-                <p>{selectedHospital?.name}</p>
-              </div>
-              <button
-                type="button"
-                className={styles.changeButton}
-                onClick={() => {
-                  setSelectedDoctor(null);
-                  if (doctorId) navigate('/book-appointment');
-                }}
-              >
-                Change
-              </button>
-            </div>
-          </div>
-        )}
 
         {selectedDoctor && (
           <>
@@ -313,7 +317,91 @@ const BookAppointmentPage = () => {
             Please select a hospital and/or department to see available doctors
           </div>
         )}
-      </form>
+          </form>
+        </div>
+
+        {/* Right Column - Doctor Profile & Summary (35%) */}
+        {selectedDoctor && (
+          <div className={styles.rightColumn}>
+            <div className={styles.doctorProfileCard}>
+              <div className={styles.profileImageWrapper}>
+                <img src={selectedDoctor.image} alt={selectedDoctor.name} className={styles.profileImageLarge} />
+                <div className={styles.onlineBadge}></div>
+              </div>
+              <h2 className={styles.profileName}>{selectedDoctor.name}</h2>
+              <p className={styles.profileSpecialty}>{selectedDoctor.specialty}</p>
+              
+              <div className={styles.ratingSection}>
+                <div className={styles.ratingDisplay}>
+                  <span className={styles.ratingStars}>⭐ {selectedDoctor.rating}</span>
+                  <span className={styles.reviewCount}>({selectedDoctor.reviews} reviews)</span>
+                </div>
+              </div>
+
+              <div className={styles.feeSection}>
+                <span className={styles.feeLabel}>Consultation Fee</span>
+                <span className={styles.feeAmount}>${selectedDoctor.consultationFee}</span>
+              </div>
+
+              {selectedHospital && (
+                <div className={styles.hospitalSection}>
+                  <span className={styles.hospitalLabel}>📍 {selectedHospital.name}</span>
+                  <span className={styles.hospitalAddress}>{selectedHospital.address}</span>
+                </div>
+              )}
+
+              {date && nextAvailableSlots.length > 0 && (
+                <div className={styles.availableSlotsSection}>
+                  <h3 className={styles.slotsTitle}>Next Available Slots</h3>
+                  <div className={styles.slotsList}>
+                    {nextAvailableSlots.map((slot, idx) => (
+                      <button
+                        key={idx}
+                        type="button"
+                        className={`${styles.slotButton} ${time === slot ? styles.slotButtonActive : ''}`}
+                        onClick={() => setTime(slot)}
+                      >
+                        {slot}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {date && time && (
+                <div className={styles.appointmentSummary}>
+                  <h3 className={styles.summaryTitle}>Appointment Summary</h3>
+                  <div className={styles.summaryItem}>
+                    <span className={styles.summaryLabel}>Date:</span>
+                    <span className={styles.summaryValue}>{new Date(date).toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}</span>
+                  </div>
+                  <div className={styles.summaryItem}>
+                    <span className={styles.summaryLabel}>Time:</span>
+                    <span className={styles.summaryValue}>{time}</span>
+                  </div>
+                  {reason && (
+                    <div className={styles.summaryItem}>
+                      <span className={styles.summaryLabel}>Reason:</span>
+                      <span className={styles.summaryValue}>{reason}</span>
+                    </div>
+                  )}
+                </div>
+              )}
+
+              <button
+                type="button"
+                className={styles.changeDoctorButton}
+                onClick={() => {
+                  setSelectedDoctor(null);
+                  if (doctorId) navigate('/book-appointment');
+                }}
+              >
+                Change Doctor
+              </button>
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };

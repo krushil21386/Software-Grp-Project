@@ -1,9 +1,10 @@
 .statistics {
-    background-color: #1A202C;
+    background-color: var(--color-bg-light);
     padding: 60px 80px;
     display: flex;
     justify-content: center;
     gap: 80px;
+    transition: all 0.3s ease;
 }
 
 .statCard {
@@ -13,13 +14,14 @@
 .statNumber {
     font-size: 48px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-crimson);
     margin-bottom: 8px;
 }
 
 .statLabel {
     font-size: 18px;
-    color: #E2E8F0;
+    color: var(--color-charcoal);
+    font-weight: 600;
 }
 
 /* Tablet */

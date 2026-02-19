@@ -4,7 +4,7 @@ import { medicineDatabase } from './mockData';
 export const suggestMedicine = (symptoms, age = null, allergies = []) => {
   const suggestions = [];
   const symptomLower = symptoms.toLowerCase();
-  
+
   // Simple keyword matching for symptom recognition
   const symptomKeywords = {
     fever: ['fever', 'high temperature', 'hot', 'burning'],
@@ -29,7 +29,7 @@ export const suggestMedicine = (symptoms, age = null, allergies = []) => {
     medicines.forEach(medicine => {
       // Check for allergies
       const medicineName = medicine.name.toLowerCase();
-      const hasAllergy = allergies.some(allergy => 
+      const hasAllergy = allergies.some(allergy =>
         medicineName.includes(allergy.toLowerCase())
       );
 
@@ -88,7 +88,7 @@ const calculateConfidence = (symptom, symptomText) => {
   };
 
   const symptomKeywords = keywords[symptom] || [];
-  const matches = symptomKeywords.filter(keyword => 
+  const matches = symptomKeywords.filter(keyword =>
     symptomText.includes(keyword)
   ).length;
 
@@ -118,4 +118,63 @@ export const analyzeSymptoms = (symptoms) => {
   }
 
   return analysis;
+};
+
+export const analyzeMedicalReport = async (file) => {
+  const formData = new FormData();
+  formData.append('report', file);
+
+  // Create abort controller for timeout
+  const controller = new AbortController();
+  let timeoutId;
+  
+  try {
+    // Set timeout to abort the request after 120 seconds (OCR can take time, especially on CPU)
+    timeoutId = setTimeout(() => {
+      controller.abort();
+    }, 120000); // 120 second (2 minute) timeout for OCR processing
+
+    const response = await fetch('http://localhost:5000/api/ai/analyze', {
+      method: 'POST',
+      body: formData,
+      signal: controller.signal,
+    });
+
+    if (timeoutId) clearTimeout(timeoutId);
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      let errorData;
+      try {
+        errorData = JSON.parse(errorText);
+      } catch {
+        errorData = { message: errorText };
+      }
+      throw new Error(`Analysis failed: ${response.status} ${response.statusText} - ${errorData.message || ''}`);
+    }
+
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    if (timeoutId) clearTimeout(timeoutId);
+    console.error('Error analyzing report:', error);
+    
+    // Check if it's a connection error
+    if (error.name === 'TypeError' && error.message.includes('Failed to fetch')) {
+      throw new Error('BACKEND_UNAVAILABLE');
+    }
+    
+    // Check if it's an abort (timeout or manual abort)
+    if (error.name === 'AbortError' || error.message.includes('aborted') || error.message.includes('signal is aborted')) {
+      throw new Error('BACKEND_TIMEOUT');
+    }
+    
+    // Check if it's a network error
+    if (error.message.includes('NetworkError') || error.message.includes('network')) {
+      throw new Error('BACKEND_UNAVAILABLE');
+    }
+    
+    // Re-throw with original error for debugging
+    throw error;
+  }
 };

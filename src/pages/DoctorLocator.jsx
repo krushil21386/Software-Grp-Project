@@ -196,7 +196,7 @@ const DoctorLocator = () => {
                       <br />
                       <Link
                         to={`/doctor/${doctor.id}`}
-                        style={{ fontSize: '12px', color: '#4299e1', textDecoration: 'underline' }}
+                        style={{ fontSize: '12px', color: '#DC143C', textDecoration: 'underline' }}
                       >
                         View Profile
                       </Link>

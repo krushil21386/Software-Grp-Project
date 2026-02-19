@@ -24,30 +24,31 @@ const Hospitals = () => {
 
   return (
     <div className={styles.container}>
-      <div className={styles.header}>
-        <h1 className={styles.title}>Hospitals & Departments</h1>
-        <p className={styles.subtitle}>
-          Browse our network of hospitals and specialized departments
-        </p>
-      </div>
+      <div className={styles.contentWrapper}>
+        <div className={styles.header}>
+          <h1 className={styles.title}>Hospitals & Departments</h1>
+          <p className={styles.subtitle}>
+            Browse our network of hospitals and specialized departments
+          </p>
+        </div>
 
-      <div className={styles.filterSection}>
-        <label className={styles.filterLabel}>Filter by Department:</label>
-        <select
-          className={styles.select}
-          value={selectedDepartment}
-          onChange={(e) => setSelectedDepartment(e.target.value)}
-        >
-          <option value="">All Departments</option>
-          {departments.map((dept) => (
-            <option key={dept.id} value={dept.id}>
-              {dept.icon} {dept.name}
-            </option>
-          ))}
-        </select>
-      </div>
+        <div className={styles.filterSection}>
+          <label className={styles.filterLabel}>Filter by Department:</label>
+          <select
+            className={styles.select}
+            value={selectedDepartment}
+            onChange={(e) => setSelectedDepartment(e.target.value)}
+          >
+            <option value="">All Departments</option>
+            {departments.map((dept) => (
+              <option key={dept.id} value={dept.id}>
+                {dept.icon} {dept.name}
+              </option>
+            ))}
+          </select>
+        </div>
 
-      <div className={styles.hospitalsGrid}>
+        <div className={styles.hospitalsGrid}>
         {filteredHospitals.map((hospital) => {
           const trafficInfo = getTrafficLevel(hospital.traffic);
           const hospitalDoctors = getHospitalDoctors(hospital.id);
@@ -136,6 +137,7 @@ const Hospitals = () => {
             </div>
           );
         })}
+        </div>
       </div>
     </div>
   );

@@ -1,19 +1,20 @@
 .loginPage {
   min-height: calc(100vh - 80px);
   padding: 40px 80px 32px 80px;
-  color: #ffffff;
+  color: var(--color-text-primary);
   display: flex;
   flex-direction: column;
   animation: loginFadeIn 0.9s ease-out both;
   transition: background 0.6s ease-out;
+  background-color: var(--color-white);
 }
 
 .patientBg {
-  background: radial-gradient(circle at 10% 20%, #2d3748 0, #1a202c 35%, #0f172a 100%);
+  background-color: var(--color-white);
 }
 
 .doctorBg {
-  background: radial-gradient(circle at 90% 20%, #1e3a8a 0, #1e293b 35%, #0f172a 100%);
+  background-color: var(--color-white);
 }
 
 .topBar {
@@ -21,7 +22,7 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 14px;
-  color: #a0aec0;
+  color: var(--color-text-muted);
   margin-bottom: 24px;
 }
 
@@ -30,12 +31,14 @@
 }
 
 .signUpLink {
-  color: #63b3ed;
+  color: var(--color-crimson);
   text-decoration: none;
   font-weight: 600;
+  transition: all 0.3s ease;
 }
 
 .signUpLink:hover {
+  color: var(--color-crimson-dark);
   text-decoration: underline;
 }
 
@@ -53,8 +56,8 @@
 
 .chip {
   border: none;
-  background: linear-gradient(90deg, #ed8936, #dd6b20);
-  color: #1a202c;
+  background-color: var(--color-crimson);
+  color: var(--color-white);
   padding: 6px 18px;
   border-radius: 999px;
   font-size: 11px;
@@ -62,6 +65,7 @@
   letter-spacing: 0.12em;
   text-transform: uppercase;
   margin-bottom: 24px;
+  transition: all 0.3s ease;
 }
 
 .heading {
@@ -69,15 +73,16 @@
   line-height: 1.2;
   font-weight: 800;
   margin: 0 0 20px 0;
+  color: var(--color-charcoal);
 }
 
 .highlight {
-  color: #f6ad55;
+  color: var(--color-crimson);
 }
 
 .subheading {
   font-size: 16px;
-  color: #cbd5e0;
+  color: var(--color-text-muted);
   margin-bottom: 32px;
 }
 
@@ -106,21 +111,22 @@
 }
 
 .featureIconShield {
-  background: linear-gradient(135deg, #ed8936, #dd6b20);
+  background-color: var(--color-crimson);
 }
 
 .featureIconBolt {
-  background: linear-gradient(135deg, #4299e1, #3182ce);
+  background-color: var(--color-charcoal);
 }
 
 .featureTitle {
   font-size: 15px;
   font-weight: 600;
+  color: var(--color-charcoal);
 }
 
 .featureDescription {
   font-size: 14px;
-  color: #a0aec0;
+  color: var(--color-text-muted);
 }
 
 .rightPanel {
@@ -133,18 +139,14 @@
   max-width: 420px;
   padding: 28px 28px 32px 28px;
   border-radius: 24px;
-  background: linear-gradient(
-    150deg,
-    rgba(30, 64, 175, 0.4),
-    rgba(15, 23, 42, 0.9)
-  );
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), 0 0 35px rgba(237, 137, 54, 0.35);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(148, 163, 184, 0.25);
+  background-color: var(--color-white);
+  box-shadow: 0 8px 32px rgba(44, 44, 44, 0.12);
+  border: 1px solid var(--color-border);
   position: relative;
   transform: translateY(14px);
   opacity: 0;
   animation: cardRise 0.9s ease-out 0.1s forwards;
+  transition: all 0.3s ease;
 }
 
 .cardTopAccent {
@@ -154,7 +156,7 @@
   right: 40px;
   height: 4px;
   border-radius: 999px;
-  background: linear-gradient(90deg, #ed8936, #f6ad55);
+  background-color: var(--color-crimson);
 }
 
 .cardHeader {
@@ -165,7 +167,7 @@
 .cardSubtitle {
   display: block;
   font-size: 12px;
-  color: #a0aec0;
+  color: var(--color-text-muted);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   margin-bottom: 14px;
@@ -174,7 +176,7 @@
 .toggleGroup {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: rgba(15, 23, 42, 0.9);
+  background-color: var(--color-bg-light);
   padding: 4px;
   border-radius: 999px;
 }
@@ -182,17 +184,18 @@
 .toggleButton {
   border: none;
   background: transparent;
-  color: #cbd5e0;
+  color: var(--color-text-muted);
   font-size: 13px;
   padding: 8px 0;
   border-radius: 999px;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .activeToggle {
-  background: linear-gradient(135deg, #4299e1, #3182ce);
-  color: #ffffff;
-  box-shadow: 0 10px 25px rgba(66, 153, 225, 0.6);
+  background-color: var(--color-crimson);
+  color: var(--color-white);
+  box-shadow: 0 4px 12px rgba(177, 18, 38, 0.3);
 }
 
 .form {
@@ -215,28 +218,29 @@
 .label {
   font-size: 11px;
   letter-spacing: 0.12em;
-  color: #a0aec0;
+  color: var(--color-text-muted);
   text-transform: uppercase;
 }
 
 .input {
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background-color: rgba(15, 23, 42, 0.8);
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
   padding: 10px 12px;
-  color: #e2e8f0;
+  color: var(--color-text-primary);
   font-size: 14px;
   width: 100%;
+  transition: all 0.3s ease;
 }
 
 .input::placeholder {
-  color: #718096;
+  color: var(--color-text-muted);
 }
 
 .input:focus {
   outline: none;
-  border-color: #4299e1;
-  box-shadow: 0 0 0 1px rgba(66, 153, 225, 0.4);
+  border-color: var(--color-crimson);
+  box-shadow: 0 0 0 1px rgba(177, 18, 38, 0.2);
 }
 
 .optionsRow {
@@ -251,7 +255,7 @@
   align-items: center;
   gap: 8px;
   font-size: 13px;
-  color: #cbd5e0;
+  color: var(--color-text-primary);
   cursor: pointer;
 }
 
@@ -259,17 +263,19 @@
   width: 16px;
   height: 16px;
   cursor: pointer;
-  accent-color: #4299e1;
+  accent-color: var(--color-crimson);
 }
 
 .forgotPasswordLink {
-  color: #63b3ed;
+  color: var(--color-crimson);
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .forgotPasswordLink:hover {
+  color: var(--color-crimson-dark);
   text-decoration: underline;
 }
 
@@ -278,13 +284,13 @@
   padding: 12px 18px;
   border-radius: 999px;
   border: none;
-  background: linear-gradient(135deg, #ed8936, #dd6b20);
-  color: #1a202c;
+  background-color: var(--color-crimson);
+  color: var(--color-white);
   font-weight: 700;
   font-size: 15px;
   cursor: pointer;
-  box-shadow: 0 16px 40px rgba(237, 137, 54, 0.7);
-  transition: box-shadow 0.25s ease, transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 16px rgba(177, 18, 38, 0.3);
+  transition: all 0.3s ease;
   width: 100%;
   display: flex;
   align-items: center;
@@ -292,9 +298,9 @@
 }
 
 .primaryButton:hover {
-  filter: brightness(1.05);
-  transform: translateY(-1px);
-  box-shadow: 0 0 26px rgba(237, 137, 54, 0.95);
+  background-color: var(--color-crimson-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(177, 18, 38, 0.4);
 }
 
 .divider {
@@ -307,12 +313,12 @@
 .dividerLine {
   flex: 1;
   height: 1px;
-  background-color: rgba(148, 163, 184, 0.4);
+  background-color: var(--color-border);
 }
 
 .dividerText {
   font-size: 11px;
-  color: #a0aec0;
+  color: var(--color-text-muted);
   letter-spacing: 0.16em;
 }
 
@@ -325,17 +331,18 @@
 
 .socialButton {
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.6);
-  background-color: rgba(15, 23, 42, 0.85);
-  color: #e2e8f0;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
   padding: 10px 12px;
   font-size: 14px;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease;
+  transition: all 0.3s ease;
 }
 
 .socialButton:hover {
-  background-color: rgba(30, 64, 175, 0.6);
+  background-color: var(--color-bg-light);
+  border-color: var(--color-crimson);
   transform: translateY(-1px);
 }
 
@@ -343,21 +350,23 @@
   display: inline-block;
   margin-top: 12px;
   font-size: 13px;
-  color: #cbd5e0;
+  color: var(--color-text-muted);
   text-decoration: none;
   background: none;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .backHomeLink:hover {
+  color: var(--color-crimson);
   text-decoration: underline;
 }
 
 .footerNote {
   margin-top: 32px;
   font-size: 11px;
-  color: #718096;
+  color: var(--color-text-muted);
   text-align: center;
 }
 

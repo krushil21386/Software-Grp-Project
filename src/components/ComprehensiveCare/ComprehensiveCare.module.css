@@ -1,6 +1,7 @@
 .section {
-    background-color: #1A202C;
+    background-color: var(--color-bg-light);
     padding: 80px 80px;
+    transition: all 0.3s ease;
 }
 
 .header {
@@ -18,31 +19,31 @@
 .title {
     font-size: 42px;
     font-weight: 700;
-    color: #ffffff;
+    color: var(--color-charcoal);
     margin: 0 0 16px 0;
     line-height: 1.2;
 }
 
 .description {
     font-size: 18px;
-    color: #E2E8F0;
+    color: var(--color-text-muted);
     line-height: 1.6;
     margin: 0;
 }
 
 .viewAllLink {
-    color: #ffffff;
+    color: var(--color-crimson);
     text-decoration: none;
     font-size: 16px;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 8px;
-    transition: opacity 0.2s ease;
+    transition: all 0.3s ease;
 }
 
 .viewAllLink:hover {
-    opacity: 0.8;
+    color: var(--color-crimson-dark);
 }
 
 .cardsGrid {
@@ -52,15 +53,17 @@
 }
 
 .serviceCard {
-    background-color: #2D3748;
+    background-color: var(--color-white);
     padding: 32px;
     border-radius: 12px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px var(--color-shadow);
+    transition: all 0.3s ease;
+    border: 1px solid var(--color-border);
 }
 
 .serviceCard:hover {
     transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 8px 24px rgba(44, 44, 44, 0.15);
 }
 
 .iconContainer {
@@ -71,6 +74,8 @@
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    background-color: rgba(177, 18, 38, 0.1);
+    transition: all 0.3s ease;
 }
 
 .icon {
@@ -82,13 +87,13 @@
 .cardTitle {
     font-size: 20px;
     font-weight: 600;
-    color: #ffffff;
+    color: var(--color-charcoal);
     margin: 0 0 12px 0;
 }
 
 .cardDescription {
     font-size: 16px;
-    color: #A0AEC0;
+    color: var(--color-text-muted);
     line-height: 1.6;
     margin: 0;
 }

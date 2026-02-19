@@ -1,88 +1,108 @@
 .container {
   min-height: calc(100vh - 80px);
-  padding: 40px 80px 32px 80px;
-  color: #ffffff;
+  padding: 40px 80px 48px 80px;
+  color: var(--color-text-primary);
   display: flex;
   flex-direction: column;
   animation: pageFadeIn 0.9s ease-out both;
-  background: radial-gradient(circle at 10% 20%, #2d3748 0, #1a202c 35%, #0f172a 100%);
+  background-color: var(--color-white);
+}
+
+/* Centered Content Wrapper */
+.contentWrapper {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
   text-align: center;
-  margin-bottom: 40px;
+  margin-bottom: 32px;
 }
 
 .title {
-  font-size: 46px;
+  font-size: 42px;
   line-height: 1.2;
   font-weight: 800;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
+  color: var(--color-charcoal);
+  letter-spacing: -0.5px;
 }
 
 .subtitle {
-  font-size: 18px;
-  color: #cbd5e0;
+  font-size: 16px;
+  color: var(--color-text-muted);
   max-width: 600px;
   margin: 0 auto;
+  line-height: 1.5;
 }
 
 .filterSection {
-  max-width: 1200px;
-  margin: 0 auto 40px;
   display: flex;
   align-items: center;
   gap: 16px;
+  margin-bottom: 40px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .filterLabel {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .select {
-  padding: 10px 12px;
+  padding: 12px 16px;
   border-radius: 10px;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  background-color: rgba(15, 23, 42, 0.8);
-  color: #e2e8f0;
-  font-size: 14px;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-white);
+  color: var(--color-text-primary);
+  font-size: 15px;
   cursor: pointer;
-  min-width: 250px;
+  min-width: 280px;
+  transition: all 0.3s ease;
+  flex: 0 0 auto;
 }
 
 .select:focus {
   outline: none;
-  border-color: #4299e1;
-  box-shadow: 0 0 0 1px rgba(66, 153, 225, 0.4);
+  border-color: var(--color-crimson);
+  box-shadow: 0 0 0 3px rgba(177, 18, 38, 0.1);
 }
 
 .select option {
-  background: #4c1d95;
-  color: #ffffff;
+  background: var(--color-white);
+  color: var(--color-text-primary);
 }
 
 .hospitalsGrid {
-  max-width: 1400px;
-  margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-  gap: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 28px;
+  width: 100%;
 }
 
 .hospitalCard {
-  background: linear-gradient(150deg, rgba(30, 64, 175, 0.4), rgba(15, 23, 42, 0.9));
-  backdrop-filter: blur(16px);
+  background-color: var(--color-white);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(148, 163, 184, 0.25);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.7), 0 0 35px rgba(237, 137, 54, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(44, 44, 44, 0.06);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .hospitalCard:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.8), 0 0 35px rgba(237, 137, 54, 0.35);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(44, 44, 44, 0.12);
+  border-color: rgba(177, 18, 38, 0.3);
 }
 
 .hospitalImage {
@@ -111,13 +131,18 @@
 }
 
 .hospitalContent {
-  padding: 24px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .hospitalName {
-  font-size: 28px;
+  font-size: 26px;
   font-weight: 700;
   margin-bottom: 16px;
+  color: var(--color-charcoal);
+  line-height: 1.3;
 }
 
 .hospitalDetails {
@@ -127,8 +152,9 @@
 .address,
 .phone {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--color-text-muted);
   margin-bottom: 8px;
+  line-height: 1.5;
 }
 
 .stats {
@@ -136,7 +162,7 @@
   gap: 32px;
   margin-bottom: 24px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .stat {
@@ -147,7 +173,7 @@
 
 .statLabel {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--color-text-muted);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -155,16 +181,21 @@
 .statValue {
   font-size: 24px;
   font-weight: 700;
+  color: var(--color-charcoal);
 }
 
 .departments {
   margin-bottom: 24px;
+  flex: 1;
 }
 
 .departmentsTitle {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   margin-bottom: 12px;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .departmentTags {
@@ -174,12 +205,13 @@
 }
 
 .departmentTag {
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(148, 163, 184, 0.3);
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
   padding: 6px 12px;
   border-radius: 12px;
   font-size: 13px;
   font-weight: 500;
+  color: var(--color-text-primary);
 }
 
 .doctorsPreview {
@@ -187,9 +219,12 @@
 }
 
 .doctorsTitle {
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 600;
   margin-bottom: 12px;
+  color: var(--color-charcoal);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 .doctorsList {
@@ -204,17 +239,17 @@
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(148, 163, 184, 0.2);
+  background-color: var(--color-bg-light);
+  border: 1px solid var(--color-border);
   border-radius: 12px;
   text-decoration: none;
-  color: #ffffff;
-  transition: background 0.3s ease, border-color 0.3s ease;
+  color: var(--color-text-primary);
+  transition: all 0.3s ease;
 }
 
 .doctorLink:hover {
-  background: rgba(15, 23, 42, 0.8);
-  border-color: rgba(148, 163, 184, 0.4);
+  background-color: var(--color-white);
+  border-color: var(--color-crimson);
 }
 
 .doctorImage {
@@ -232,29 +267,35 @@
   font-size: 14px;
   font-weight: 600;
   margin-bottom: 4px;
+  color: var(--color-charcoal);
 }
 
 .doctorSpecialty {
   font-size: 12px;
-  color: rgba(255, 255, 255, 0.8);
+  color: var(--color-text-muted);
 }
 
 .viewAllLink {
   display: inline-block;
   font-size: 14px;
-  color: #f0abfc;
+  color: var(--color-crimson);
   text-decoration: none;
   font-weight: 600;
   margin-top: 8px;
+  transition: all 0.3s ease;
 }
 
 .viewAllLink:hover {
+  color: var(--color-crimson-dark);
   text-decoration: underline;
 }
 
 .actionButtons {
   display: flex;
   gap: 12px;
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid var(--color-border);
 }
 
 .viewDoctorsButton,
@@ -270,31 +311,37 @@
 }
 
 .viewDoctorsButton {
-  background: rgba(15, 23, 42, 0.8);
-  color: #ffffff;
-  border-color: rgba(148, 163, 184, 0.5);
+  background-color: var(--color-white);
+  color: var(--color-charcoal);
+  border-color: var(--color-border);
 }
 
 .viewDoctorsButton:hover {
-  background: rgba(15, 23, 42, 0.9);
+  background-color: var(--color-bg-light);
+  border-color: var(--color-crimson);
   transform: translateY(-2px);
 }
 
 .bookButton {
-  background: linear-gradient(135deg, #ed8936, #dd6b20);
-  color: #1a202c;
-  box-shadow: 0 16px 40px rgba(237, 137, 54, 0.7);
+  background-color: var(--color-crimson);
+  color: var(--color-white);
+  box-shadow: 0 4px 16px rgba(177, 18, 38, 0.3);
 }
 
 .bookButton:hover {
-  filter: brightness(1.05);
+  background-color: var(--color-crimson-dark);
   transform: translateY(-2px);
-  box-shadow: 0 0 26px rgba(237, 137, 54, 0.95);
+  box-shadow: 0 6px 20px rgba(177, 18, 38, 0.4);
 }
 
 @media (max-width: 1024px) {
+  .container {
+    padding: 32px 40px;
+  }
+
   .hospitalsGrid {
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 24px;
   }
 }
 
@@ -303,21 +350,34 @@
     padding: 24px;
   }
 
+  .contentWrapper {
+    max-width: 100%;
+  }
+
   .title {
     font-size: 32px;
+  }
+
+  .header {
+    margin-bottom: 24px;
   }
 
   .filterSection {
     flex-direction: column;
     align-items: stretch;
+    gap: 12px;
+    margin-bottom: 32px;
+    padding-bottom: 20px;
   }
 
   .select {
     width: 100%;
+    min-width: auto;
   }
 
   .hospitalsGrid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
   .actionButtons {

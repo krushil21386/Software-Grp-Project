@@ -6,19 +6,19 @@ const TopSpecialists = () => {
     {
       name: 'Dr. Emily Chen',
       specialty: 'Neurologist',
-      specialtyColor: '#2B6CB0',
+      specialtyColor: 'var(--color-crimson)',
       description: 'Expert in neurological disorders with over 15 years of experience in treating complex brain conditions.'
     },
     {
       name: 'Dr. James Wilson',
       specialty: 'Cardiologist',
-      specialtyColor: '#2B6CB0',
+      specialtyColor: 'var(--color-crimson)',
       description: 'Leading heart specialist focused on preventive cardiology and advanced cardiac interventions.'
     },
     {
       name: 'Dr. Sarah Thompson',
       specialty: 'Pediatrician',
-      specialtyColor: '#2B6CB0',
+      specialtyColor: 'var(--color-crimson)',
       description: 'Dedicated to children\'s health with a compassionate approach to pediatric care and development.'
     }
   ];

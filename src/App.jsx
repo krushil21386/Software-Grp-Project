@@ -23,7 +23,13 @@ import AdminDashboard from './pages/AdminDashboard';
 function App() {
   return (
     <AuthProvider>
-      <BrowserRouter basename="/Software-Grp-Project">
+      <BrowserRouter 
+        basename="/Software-Grp-Project"
+        future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true
+        }}
+      >
         <div className="app">
           <Navbar />
           <Routes>

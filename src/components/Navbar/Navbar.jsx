@@ -99,30 +99,30 @@ const Navbar = () => {
         
         <div className={styles.sidebarLinks}>
           <Link to="/" onClick={() => handleLinkClick('/')}>Home</Link>
-          <div onClick={() => handleLinkClick('/hospitals')} style={{ cursor: 'pointer' }}>Hospitals</div>
-          <div onClick={() => handleLinkClick('/doctor-locator')} style={{ cursor: 'pointer' }}>Find Doctors</div>
-          <div onClick={() => handleLinkClick('/medicine-ai')} style={{ cursor: 'pointer' }}>AI Medicine Suggestion</div>
-          <div onClick={() => handleLinkClick('/book-appointment')} style={{ cursor: 'pointer' }}>Book Appointment</div>
-          <div onClick={() => handleLinkClick('/emergency-services')} style={{ cursor: 'pointer' }}>🚨 Emergency Services</div>
-          <div onClick={() => handleLinkClick('/medicine-delivery')} style={{ cursor: 'pointer' }}>💊 Medicine Delivery</div>
+          <Link to="/hospitals" onClick={() => handleLinkClick('/hospitals')}>Hospitals</Link>
+          <Link to="/doctor-locator" onClick={() => handleLinkClick('/doctor-locator')}>Find Doctors</Link>
+          <Link to="/medicine-ai" onClick={() => handleLinkClick('/medicine-ai')}>AI Medicine Suggestion</Link>
+          <Link to="/book-appointment" onClick={() => handleLinkClick('/book-appointment')}>Book Appointment</Link>
+          <Link to="/emergency-services" onClick={() => handleLinkClick('/emergency-services')}>🚨 Emergency Services</Link>
+          <Link to="/medicine-delivery" onClick={() => handleLinkClick('/medicine-delivery')}>💊 Medicine Delivery</Link>
           {isAuthenticated && (
             <>
               {user?.role === 'patient' && (
                 <>
-                  <div onClick={() => handleLinkClick('/patient-dashboard')} style={{ cursor: 'pointer' }}>Patient Dashboard</div>
-                  <div onClick={() => handleLinkClick('/appointments')} style={{ cursor: 'pointer' }}>My Appointments</div>
-                  <div onClick={() => handleLinkClick('/medical-records')} style={{ cursor: 'pointer' }}>Medical Records</div>
+                  <Link to="/patient-dashboard" onClick={() => handleLinkClick('/patient-dashboard')}>Patient Dashboard</Link>
+                  <Link to="/appointments" onClick={() => handleLinkClick('/appointments')}>My Appointments</Link>
+                  <Link to="/medical-records" onClick={() => handleLinkClick('/medical-records')}>Medical Records</Link>
                 </>
               )}
               {user?.role === 'doctor' && (
                 <>
-                  <div onClick={() => handleLinkClick('/doctor-dashboard')} style={{ cursor: 'pointer' }}>Doctor Dashboard</div>
-                  <div onClick={() => handleLinkClick('/doctor-availability')} style={{ cursor: 'pointer' }}>📅 Availability Heatmap</div>
-                  <div onClick={() => handleLinkClick('/appointments')} style={{ cursor: 'pointer' }}>My Appointments</div>
+                  <Link to="/doctor-dashboard" onClick={() => handleLinkClick('/doctor-dashboard')}>Doctor Dashboard</Link>
+                  <Link to="/doctor-availability" onClick={() => handleLinkClick('/doctor-availability')}>📅 Availability Heatmap</Link>
+                  <Link to="/appointments" onClick={() => handleLinkClick('/appointments')}>My Appointments</Link>
                 </>
               )}
               {user?.role === 'admin' && (
-                <div onClick={() => handleLinkClick('/admin-dashboard')} style={{ cursor: 'pointer' }}>Admin Dashboard</div>
+                <Link to="/admin-dashboard" onClick={() => handleLinkClick('/admin-dashboard')}>Admin Dashboard</Link>
               )}
             </>
           )}
