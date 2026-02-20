@@ -10,7 +10,7 @@ export default defineConfig({
       }
     }
   }
-}
+},
 
   base: '/Software-Grp-Project/',
   plugins: [react()],
