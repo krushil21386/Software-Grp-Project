@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://krushil21386.github.io/Software-Grp-Project",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
