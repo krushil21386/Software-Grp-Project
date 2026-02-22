@@ -1,254 +1,200 @@
-# React + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-
-# 🏥 Intelligent Healthcare Management System
+# 🏥 Intelligent Healthcare Management System – Frontend
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Backend-Django-green?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/API-REST-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Auth-JWT-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Automation-Celery-red?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Status-Active-success?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Frontend-React-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/UI-Responsive-green?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Design-Modern-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=for-the-badge" />
 </p>
 
 ---
 
 ## 🚀 Project Overview
 
-An intelligent, automation-driven **Healthcare Management Backend System** built using **Django REST Framework**.
+The **Intelligent Healthcare Management System (Frontend)** is a modern, responsive user interface designed to simplify healthcare interactions between patients and doctors.
 
-This system focuses on:
+This frontend focuses on:
 
-- 🔐 Secure authentication
-- 📅 Smart appointment scheduling
-- 🚑 Emergency routing & escalation
-- 💊 Medicine management
-- 🔔 Automated notifications
-- 🤖 Risk-based automation engine
+- 🧑‍⚕️ Doctor & Patient interaction
+- 📅 Smart Appointment Booking UI
+- 🚑 Emergency Request Interface
+- 💊 Medicine Ordering Interface
+- 🔔 Real-time User Notifications
+- 📊 Dashboard & Activity Tracking
 
-Designed with **clean architecture**, scalability, and production readiness in mind.
+Built with scalability and user experience as top priorities.
 
 ---
 
-# 🏗 System Architecture
+# 🎨 UI Design Philosophy
+
+- Clean & Minimal Layout
+- Responsive Design (Mobile + Desktop)
+- Intuitive Navigation
+- Accessibility-Focused Components
+- Modern Dashboard Experience
+
+---
+
+# 🔥 Frontend Modules
+
+## 🔐 Authentication Pages
+- Login Page
+- Registration Page
+- OTP Verification Screen
+- Role Selection (Patient / Doctor)
+
+---
+
+## 👤 User Dashboard
+
+### 🧑 Patient Dashboard
+- View upcoming appointments
+- Book new appointment
+- Track emergency requests
+- Order medicines
+- Profile management
+
+### 👨‍⚕️ Doctor Dashboard
+- View scheduled appointments
+- Update availability
+- Manage patient records (UI level)
+- Emergency alerts display
+
+---
+
+## 📅 Appointment Interface
+- Interactive calendar view
+- Time slot selection
+- Booking confirmation screen
+- Appointment status tracking
+
+---
+
+## 🚑 Emergency Request Interface
+- Location input (UI)
+- One-click emergency button
+- Real-time request status display
+- Emergency history view
+
+---
+
+## 💊 Medicine Ordering Interface
+- Medicine browsing page
+- Search & filter functionality
+- Add-to-cart UI
+- Order summary page
+- Order tracking screen
+
+---
+
+## 🔔 Notification Center
+- Appointment reminders
+- Emergency updates
+- System alerts
+- Security alerts
+
+---
+
+# 📂 Frontend Structure
 
 ```
-Client (Web / Mobile)
-        │
-        ▼
-Django REST API Layer
-        │
-        ▼
-Service Layer (Business Logic)
-        │
-        ▼
-Automation Engine + Background Tasks
-        │
-        ▼
-PostgreSQL Database
-```
-
----
-
-# 🔥 Core Backend Modules
-
-## 🔐 Authentication & Authorization
-- User Registration
-- Secure Login
-- OTP Verification
-- JWT Access & Refresh Tokens
-- Role-Based Access Control (Patient / Doctor / Admin)
-- Account Lock After Failed Attempts
-
----
-
-## 👤 User Profile Service
-- Separate Patient & Doctor Profiles
-- Doctor Specialization
-- Availability Scheduling
-- Profile Management
-
----
-
-## 📅 Appointment Management
-- Book / Cancel / Reschedule
-- Conflict Detection (No Double Booking)
-- Appointment Status Flow:
-  ```
-  Booked → Ongoing → Completed
-  ```
-- Doctor & Patient History Tracking
-
----
-
-## 🚑 Emergency Routing System
-- Location-Based Hospital Detection
-- Emergency Priority Queue
-- Auto Doctor Notification
-- Escalation if Unanswered
-
----
-
-## 💊 Medicine Management
-- Medicine Listing
-- Stock Tracking
-- Order Placement
-- Automatic Stock Deduction
-- Order Status Updates
-
----
-
-# 🤖 Intelligent Automation Engine
-
-### 🧠 Risk-Based Appointment Prioritization
-- Detect high-risk patients
-- Auto-prioritize bookings
-- Suggest urgent slots
-
-### 📆 Automated Follow-Up Scheduling
-- Auto-create follow-ups after consultation
-- Send reminders
-- Detect missed follow-ups
-
-### 🚨 Emergency Escalation Automation
-- If not accepted within X minutes:
-  - Escalate to next hospital
-  - Notify admin
-- Maintain priority queue
-
-### ⏰ Time-Based Background Triggers
-- Expire OTP automatically
-- Send 24-hour appointment reminders
-- Auto-update appointment status
-- Detect suspicious login attempts
-
----
-
-# ⚙️ Background Task Processing
-
-Powered by:
-
-- Celery / Django Q
-- Redis
-- Scheduled Jobs
-- Event-Based Triggers
-- Async Notification Processing
-
----
-
-# 📊 Analytics & Reporting
-
-- Doctor Performance Metrics
-- Appointment Completion Rate
-- Emergency Frequency Tracking
-- Weekly / Monthly Reports
-
----
-
-# 🛡 Security & Audit
-
-- Login Attempt Logging
-- Admin Action Logs
-- Suspicious Activity Detection
-- Full Audit Trail
-
----
-
-# 📂 Project Structure
-
-```
-healthcare_system/
+src/
 │
-├── authentication/
-├── users/
-├── appointments/
-├── emergency/
-├── medicine/
-├── automation/
-├── notifications/
-├── analytics/
-├── audit/
-├── background_tasks/
+├── components/
+├── pages/
+│   ├── auth/
+│   ├── dashboard/
+│   ├── appointments/
+│   ├── emergency/
+│   ├── medicines/
 │
-└── core/
+├── layouts/
+├── hooks/
+├── services/ (API integration - pending)
+├── assets/
+└── utils/
 ```
 
 ---
 
 # 📌 Technologies Used
 
-- Python
-- Django
-- Django REST Framework
-- JWT Authentication
-- Celery / Django Q
-- PostgreSQL
-- Redis
+- React.js (or your chosen framework)
+- HTML5
+- CSS3 / Tailwind / Bootstrap
+- JavaScript (ES6+)
+- Axios (API integration – planned)
+- Responsive Design Principles
 
 ---
 
 # 📈 Current Progress
 
 ## ✅ Completed
-- Authentication System
-- User Role Management
-- Appointment Booking Logic
-- Emergency Routing Base
-- Medicine Module
-- Automation Engine Framework
-- Background Task Setup
+- Authentication UI Screens
+- Patient & Doctor Dashboard Layout
+- Appointment Booking UI
+- Emergency Request Interface
+- Medicine Ordering UI
+- Responsive Design Implementation
 
 ## 🚧 In Progress
-- Advanced Risk Rules
-- Dashboard Analytics
-- Performance Optimization
+- API Integration
+- State Management Optimization
+- Notification UI Improvements
 
-## 🔜 Upcoming
-- Deployment Setup
-- Swagger API Documentation
-- Production Hardening
-
----
-
-# 🧪 Sample API Endpoints
-
-```
-POST   /api/auth/register/
-POST   /api/auth/login/
-GET    /api/appointments/
-POST   /api/appointments/book/
-POST   /api/emergency/request/
-GET    /api/analytics/dashboard/
-```
+## 🔜 Remaining Work
+- Backend Integration
+- Database Connection
+- Authentication Token Handling
+- Final Testing & Optimization
 
 ---
 
-# 🎯 Future Enhancements
+# 🤖 Future Plans
 
-- AI-Based Risk Prediction
-- Real-Time Notifications (WebSockets)
-- Mobile App Integration
-- Microservices Architecture Upgrade
-- Docker & CI/CD Pipeline
+## 🧠 AI-Based Diagnosis (Planned)
+- Image upload feature
+- Temporary health assessment
+- Smart recommendations
+- Risk detection system
+
+> ⚠️ AI integration is not implemented yet.
 
 ---
 
-# 👨‍💻 Author
+## 🗄 Database Integration (Pending)
+- User data persistence
+- Appointment storage
+- Emergency tracking
+- Medicine order history
 
-Built as a scalable backend architecture project focused on intelligent healthcare automation.
+> ⚠️ Database integration is still under development.
+
+---
+
+# 🎯 Upcoming Enhancements
+
+- Dark Mode UI
+- Real-Time Updates (WebSockets)
+- Push Notifications
+- Advanced UI Animations
+- Mobile App Version
+- Full AI Integration
+- Complete Backend Integration
+
+---
+
+# 👨‍💻 Project Status
+
+🟡 Frontend Development: Major UI Completed  
+🔵 Backend: Not Integrated  
+🔴 Database: Not Implemented  
+🟣 AI Module: Planned  
 
 ---
 
 <p align="center">
-  ⭐ If you like this project, give it a star on GitHub!
+  🚀 Building a smarter healthcare experience, step by step.
 </p>
