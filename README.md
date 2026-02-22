@@ -96,28 +96,6 @@ Built with scalability and user experience as top priorities.
 
 ---
 
-# 📂 Frontend Structure
-
-```
-src/
-│
-├── components/
-├── pages/
-│   ├── auth/
-│   ├── dashboard/
-│   ├── appointments/
-│   ├── emergency/
-│   ├── medicines/
-│
-├── layouts/
-├── hooks/
-├── services/ (API integration - pending)
-├── assets/
-└── utils/
-```
-
----
-
 # 📌 Technologies Used
 
 - React.js (or your chosen framework)
